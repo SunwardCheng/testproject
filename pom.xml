@@ -1,0 +1,135 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+ 
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>shizhan.zk</groupId>
+  <artifactId>myzookeeper</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>myzookeeper</name>
+  <!-- FIXME change it to the project's website -->
+  <url>http://www.example.com</url>
+  <packaging>pom</packaging>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    
+    <zookeeper.version>3.4.5</zookeeper.version>
+    <juint.version>4.12</juint.version>
+    <log4j.version>1.2.15</log4j.version>
+    <slf4j.servion>1.6.1</slf4j.servion>
+    <netty-all.version>3.2.2.Final</netty-all.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${juint.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.apache.zookeeper/zookeeper -->
+	<dependency>
+		<groupId>org.apache.zookeeper</groupId>
+		<artifactId>zookeeper</artifactId>
+		<version>${zookeeper.version}</version>
+	</dependency>
+	<dependency>  
+        <groupId>log4j</groupId>  
+        <artifactId>log4j</artifactId>  
+        <version>${log4j.version}</version> 
+         <exclusions> 
+             <exclusion>               
+                <groupId>javax.jms</groupId> 
+                <artifactId>jms</artifactId> 
+             </exclusion> 
+             <exclusion>                
+                 <groupId>com.sun.jdmk</groupId>           
+                  <artifactId>jmxtools</artifactId> 
+             </exclusion> 
+             <exclusion>             
+                  <groupId>com.sun.jmx</groupId> 
+                  <artifactId>jmxri</artifactId> 
+             </exclusion>
+          </exclusions> 
+    </dependency> 
+       <!-- <dependency>
+		   	<groupId>org.apache.maven.plugins</groupId>
+		    <artifactId>maven-resources-plugin</artifactId>
+	   </dependency> -->
+	<dependency>
+		<groupId>org.slf4j</groupId>
+		<artifactId>slf4j-api</artifactId>
+		<version>${slf4j.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>io.netty</groupId>
+	    <artifactId>netty-all</artifactId>
+    	<version>${netty-all.version}</version>
+    	<scope>compile</scope>
+	</dependency>
+  </dependencies>
+
+  <build>
+    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+      <plugins>
+        <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
+        <!-- <plugin>
+          <artifactId>maven-clean-plugin</artifactId>
+          <version>${maven-clean-plugin.version}</version>
+        </plugin> -->
+        <!-- default lifecycle, jar packaging: see https://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
+        <!-- <plugin>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>${maven-resources-plugin.version}</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>${maven-compiler-plugin.version}</version>
+        </plugin> 
+        <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>${maven-surefire-plugin.version}</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>${maven-jar-plugin.version}</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-install-plugin</artifactId>
+          <version>${maven-install-plugin.version}</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>${maven-deploy-plugin.version}</version>
+        </plugin> -->
+        <!-- site lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#site_Lifecycle -->
+        <!-- <plugin>
+          <artifactId>maven-site-plugin</artifactId>
+          <version>${maven-site-plugin.version}</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-project-info-reports-plugin</artifactId>
+          <version>${maven-project-info-reports-plugin.version}</version>
+        </plugin> -->
+        
+        
+        <!-- java编译插件-->
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<version>3.2</version>
+			<configuration>
+			<source>1.7</source>
+			<target>1.7</target>
+			<encoding>UTF-8</encoding>
+			</configuration>
+		</plugin>
+
+
+      </plugins>
+    </pluginManagement>
+  </build>
+  
+  
+  
+</project>
