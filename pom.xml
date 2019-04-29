@@ -16,7 +16,7 @@
     <zookeeper.version>3.4.5</zookeeper.version>
     <juint.version>4.12</juint.version>
     <log4j.version>1.2.15</log4j.version>
-    <slf4j.vervion>1.6.1</slf4j.vervion>
+    <slf4j.version>1.6.1</slf4j.version>
     <netty-all.version>3.2.2.Final</netty-all.version>
   </properties>
 
